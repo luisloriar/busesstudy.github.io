@@ -1,0 +1,29 @@
+---
+title: "Bus Study: Conditional logit results"
+author: "By: Luis Loria"
+output: 
+  html_document:
+    code_folding: hide
+---
+
+***
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(kableExtra)
+```
+
+These are the results of a DCE study looking at preferences for bus services in Aberdeen. Respondents were asked to choose between 3 services: two hypothetical bus services and their current one. Bus services were described in terms of frequency, comfort level, punctuality, driver friendliness, greenhouse gas emissions, local pollutant emissions and fare.
+
+Table 1 shows the results of a conditional logit model.
+
+
+```{r cars}
+results <- read.csv(file = "~/Documents/trabajo/TestingM/Markdown1/results.csv", head = TRUE, sep=",")
+rownames(results) <- results[,1]
+results[,1] <- NULL
+results %>%
+  kable(caption = "Table 1. Conditional logit results") %>%
+  kable_styling(bootstrap_options = c("striped", "hover","responsive"),full_width = F)
+```
