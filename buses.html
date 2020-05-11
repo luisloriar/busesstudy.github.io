@@ -9,9 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="" />
 
 
-<title>My Website</title>
+<title>Bus Study: Conditional logit results</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,8 +21,10 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -245,6 +248,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -290,14 +296,191 @@ $(document).ready(function () {
 
 <div class="fluid-row" id="header">
 
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
-<h1 class="title toc-ignore">My Website</h1>
+
+<h1 class="title toc-ignore">Bus Study: Conditional logit results</h1>
 
 </div>
 
 
-<p>Hola!</p>
+<hr />
+<p>These are the results of a DCE study looking at preferences for bus services in Aberdeen. Respondents were asked to choose between 3 services: two hypothetical bus services and their current one. Bus services were described in terms of frequency, comfort level, punctuality, driver friendliness, greenhouse gas emissions, local pollutant emissions and fare.</p>
+<p>Table 1 shows the results of a conditional logit model.</p>
+<pre class="r"><code>results &lt;- read.csv(file = &quot;~/Documents/trabajo/TestingM/Markdown1/results.csv&quot;, head = TRUE, sep=&quot;,&quot;)
+rownames(results) &lt;- results[,1]
+results[,1] &lt;- NULL
+results %&gt;%
+  kable(caption = &quot;Table 1. Conditional logit results&quot;) %&gt;%
+  kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;,&quot;responsive&quot;),full_width = F)</code></pre>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 1. Conditional logit results
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Estimate
+</th>
+<th style="text-align:right;">
+Std.Error
+</th>
+<th style="text-align:right;">
+Lower.Limit
+</th>
+<th style="text-align:right;">
+Upper.Limit
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+asc
+</td>
+<td style="text-align:right;">
+0.3443
+</td>
+<td style="text-align:right;">
+0.0915
+</td>
+<td style="text-align:right;">
+0.5236
+</td>
+<td style="text-align:right;">
+0.1650
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+frequency
+</td>
+<td style="text-align:right;">
+-0.1396
+</td>
+<td style="text-align:right;">
+0.0112
+</td>
+<td style="text-align:right;">
+-0.1176
+</td>
+<td style="text-align:right;">
+-0.1615
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+comf
+</td>
+<td style="text-align:right;">
+0.1237
+</td>
+<td style="text-align:right;">
+0.0765
+</td>
+<td style="text-align:right;">
+0.2736
+</td>
+<td style="text-align:right;">
+-0.0263
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+punctual
+</td>
+<td style="text-align:right;">
+-0.1348
+</td>
+<td style="text-align:right;">
+0.0169
+</td>
+<td style="text-align:right;">
+-0.1016
+</td>
+<td style="text-align:right;">
+-0.1679
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+driver
+</td>
+<td style="text-align:right;">
+-0.1763
+</td>
+<td style="text-align:right;">
+0.0773
+</td>
+<td style="text-align:right;">
+-0.0247
+</td>
+<td style="text-align:right;">
+-0.3278
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+greenhouse
+</td>
+<td style="text-align:right;">
+0.3413
+</td>
+<td style="text-align:right;">
+0.0462
+</td>
+<td style="text-align:right;">
+0.4319
+</td>
+<td style="text-align:right;">
+0.2508
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+localpollutant
+</td>
+<td style="text-align:right;">
+0.5617
+</td>
+<td style="text-align:right;">
+0.0456
+</td>
+<td style="text-align:right;">
+0.6511
+</td>
+<td style="text-align:right;">
+0.4723
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fare
+</td>
+<td style="text-align:right;">
+-1.1781
+</td>
+<td style="text-align:right;">
+0.0769
+</td>
+<td style="text-align:right;">
+-1.0275
+</td>
+<td style="text-align:right;">
+-1.3287
+</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -332,6 +515,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
