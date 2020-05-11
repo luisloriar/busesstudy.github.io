@@ -1,3 +1,10 @@
 ---
-title: "about"
+title: "My Contact Info"
 ---
+
+Email:
+luis.loria@abdn.ac.uk
+
+Twitter:
+@luisloria
+

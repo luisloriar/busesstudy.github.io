@@ -1,6 +1,6 @@
 ---
 title: "Bus Study: Conditional logit results"
-author: "By: Luis Loria"
+author: 
 output: 
   html_document:
     code_folding: hide
@@ -14,7 +14,8 @@ library(knitr)
 library(kableExtra)
 ```
 
-These are the results of a DCE study looking at preferences for bus services in Aberdeen. Respondents were asked to choose between 3 services: two hypothetical bus services and their current one. Bus services were described in terms of frequency, comfort level, punctuality, driver friendliness, greenhouse gas emissions, local pollutant emissions and fare.
+These are the results of a DCE study looking at preferences for bus services in Aberdeen. Respondents were asked to choose between 3 services: two hypothetical bus services and their current one. 
+Bus services were described in terms of frequency, comfort level, punctuality, driver friendliness, greenhouse gas emissions, local pollutant emissions and fare.
 
 Table 1 shows the results of a conditional logit model.
 
