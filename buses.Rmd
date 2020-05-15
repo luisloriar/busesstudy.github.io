@@ -12,6 +12,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 library(knitr)
 library(kableExtra)
+setwd("~/Documents/trabajo/TestingM/Markdown1/")
 ```
 
 These are the results of a DCE study looking at preferences for bus services in Aberdeen. Respondents were asked to choose between 3 services: two hypothetical bus services and their current one. 
@@ -21,7 +22,7 @@ Table 1 shows the results of a conditional logit model.
 
 
 ```{r cars}
-results <- read.csv(file = "~/Documents/trabajo/TestingM/Markdown1/results.csv", head = TRUE, sep=",")
+results <- read.csv(file = "./results.csv", head = TRUE, sep=",")
 rownames(results) <- results[,1]
 results[,1] <- NULL
 results %>%
