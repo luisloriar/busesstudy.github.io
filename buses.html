@@ -314,7 +314,8 @@ $(document).ready(function () {
 <hr />
 <p>These are the results of a DCE study looking at preferences for bus services in Aberdeen. Respondents were asked to choose between 3 services: two hypothetical bus services and their current one. Bus services were described in terms of frequency, comfort level, punctuality, driver friendliness, greenhouse gas emissions, local pollutant emissions and fare.</p>
 <p>Table 1 shows the results of a conditional logit model.</p>
-<pre class="r"><code>results &lt;- read.csv(file = &quot;~/Documents/trabajo/TestingM/Markdown1/results.csv&quot;, head = TRUE, sep=&quot;,&quot;)
+<pre class="r"><code>setwd(&quot;~/Documents/trabajo/TestingM/Markdown1&quot;)
+results &lt;- read.csv(file = &quot;./results.csv&quot;, head = TRUE, sep=&quot;,&quot;)
 rownames(results) &lt;- results[,1]
 results[,1] &lt;- NULL
 results %&gt;%
